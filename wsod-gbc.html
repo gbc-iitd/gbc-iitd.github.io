@@ -1,1 +1,172 @@
+<!DOCTYPE html>
+<html>
 
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <title>UCL</title>
+
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- <base href="/"> -->
+
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <!-- Place favicon.ico in the root directory -->
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.8.0/codemirror.min.css">
+    <link rel="stylesheet" href="css/app.css">
+
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Didact+Gothic" />
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.8.0/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.3/clipboard.min.js"></script>
+
+    <script src="js/app.js"></script>
+</head>
+
+<body font-family: 'Didact Gothic'>
+    <div class="container">
+        <div class="row">
+            <h2 class="col-md-12 text-center" font-family: 'Didact Gothic'>
+                Gall Bladder Cancer Detection from US Images with only Image Level Labels
+                </br>
+                <small>
+                    MICCAI 2023
+                </small>
+            </h2>
+        </div>
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <ul class="list-inline">
+                    <li>
+                        <a href="https://www.cse.iitd.ac.in/~soumen">
+							Soumen Basu
+                        </a>
+                      </br>IIT Delhi
+                    </li>
+                    <li>
+                        <a href="https://www.linkedin.com/in/somanshu-singla-105636214/">
+							Ashish Papanai
+                        </a>
+                        </br>IIT Delhi
+                    <li>
+                        <a href="https://www.linkedin.com/in/mayank-gupta-m73/">
+							Mayank Gupta
+                        </a>
+                        </br>IIT Delhi
+                    </li>
+                    <li>
+                        <a href="mailto:pankajgupta959@gmail.com">
+							Pankaj Gupta
+                        </a>
+                        </br>PGIMER Chandigarh
+                    </li>
+                    <li>
+                        <a href="https://www.cse.iitd.ac.in/~chetan">
+							Chetan Arora
+                        </a>
+                        </br>IIT Delhi
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="row" align="middle">
+            <div class="btn-group" role="group" aria-label="Top menu" align="middle">
+                <a class="btn btn-primary" href="#">Paper</a>
+                <a class="btn btn-primary" href="https://github.com/sbasu276/Weakly_DETR">Code</a>
+                <a class="btn btn-primary" href="https://gbc-iitd.github.io/data/gbcu">Dataset</a>
+            </div>
+        </div>
+        
+        <br><br>
+
+        <div class="row" id="header_img" align="middle">
+            <image src="wsod-data/teaser.png" class="img-responsive" alt="overview" width="700px">
+        </div>
+		
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h4>
+                    Abstract
+                </h4>
+                <p class="text-justify" font-family: 'Didact Gothic'>
+                Automated detection of Gallbladder Cancer (GBC) from Ultrasound (US) images is an important problem,
+                which has drawn increased interest from researchers. However, most of these works use difficult-toacquire
+                information such as bounding box annotations or additional US videos. In this paper, we focus on
+                GBC detection using only image-level labels. Such annotation is usually available based on the diagnostic
+                report of a patient, and do not require additional annotation effort from the physicians. However, our
+                analysis reveals that it is difficult to train a standard image classification model for GBC detection. This is
+                due to the low inter-class variance (a malignant region usually occupies only a small portion of a US
+                image), high intra-class variance (due to the US sensor capturing a 2D slice of a 3D object leading to large
+                viewpoint variations), and low training data availability. We posit that even when we have only the image
+                level label, still formulating the problem as object detection (with bounding box output) helps a deep
+                neural network (DNN) model focus on the relevant region of interest. Since no bounding box annotations
+                is available for training, we pose the problem as weakly supervised object detection (WSOD). Motivated
+                by the recent success of transformer models in object detection, we train one such model, DETR, using
+                multi-instance-learning (MIL) with self-supervised instance selection to suit the WSOD task. Our proposed
+                method demonstrates an improvement of AP and detection sensitivity over the SOTA transformer-based
+                and CNN-based WSOD methods.
+                </p>
+            </div>
+        </div>
+		
+		 <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h4>
+                    Key Results
+                </h4>
+                
+                <div class="row" id="result_img" align="middle">
+                    <image src="wsod-data/key-result.png" class="img-responsive" alt="results" width="600px">
+                </div>
+		
+            </div>
+        </div>
+	   
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h4>
+                    BibTeX (Citation)
+                </h4>
+				<pre style="white-space: pre-wrap; background: hsl(220, 50%, 95%); font-size: 11px">
+@@inproceedings{basu2023gallbladder,
+  title={Gall Bladder Cancer Detection from US Images with only Image Level Labels},
+  author={Basu, Soumen and Papanai, Ashish and Gupta, Mayank and and Gupta, Pankaj and Arora, Chetan},
+  booktitle={International Conference on Medical Image Computing and Computer-Assisted Intervention},
+  pages={},
+  year={2023},
+  organization={Springer}
+}			
+                </pre>
+			</div>
+        </div>
+        <!--div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h4 font-family: 'Didact Gothic'>
+                    Acknowledgements
+                </h5>
+                <p class="text-justify" font-family: 'Didact Gothic'>
+                This work was supported by ???.
+                </p>
+            </div>
+        </div-->
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <p class="text-justify" font-family: 'Didact Gothic'>
+                <center style="font-size:10px"><b>Credits:</b> Template of this webpage from <a href="http://www.mgharbi.com/">
+                    here.
+                </a></center>
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
